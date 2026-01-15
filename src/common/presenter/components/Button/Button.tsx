@@ -5,7 +5,7 @@ const Button = ({text, customStyles, enabled, onClick}: ButtonProps) => {
     <button
       className={`px-10 py-2 rounded-lg ${customStyles} hover:shadow-lg hover:bg-opacity-80 hover:-translate-y-0.5 transition duration-500`}
       onClick={onClick}
-      disabled={enabled ? !enabled : false}
+      disabled={enabled === false}
     >
       {text}
     </button>

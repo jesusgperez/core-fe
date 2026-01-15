@@ -23,7 +23,7 @@ const Select = ({
   const deleteSelectionMultiple = (data: IAssetEntity) => {
     setSelected(selected.filter(obj => obj.tag !== data.tag))
     selectedOuter?.delete(data.tag)
-    setSelectedOuter?(new Set(selectedOuter)) : ''
+    setSelectedOuter?.(new Set(selectedOuter))
   }
 
   const onClickListItem = (data: IAssetEntity) => {
@@ -31,12 +31,12 @@ const Select = ({
       if (multiple) {
         selected.push(data)
         setSelected(selected.filter(obj => obj))
-        setSelectedOuter?(new Set(selectedOuter?.add(data.tag))) : ''
+        setSelectedOuter?.(new Set(selectedOuter?.add(data.tag)))
         return
       }
 
       setSelected([data])
-      setSelectedOuter?(new Set([data])) : ''
+      setSelectedOuter?.(new Set([data.tag]))
     } else {
       deleteSelectionMultiple(data)
     }
