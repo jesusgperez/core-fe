@@ -10,7 +10,7 @@ import { AxiosError } from "axios";
 import { useLocalStorage } from "../../../common/presenter/hooks";
 import { handleApiErrors } from "../../../helpers";
 
-const API_URL = getEnvironments().VITE_API_URL
+const API_URL : string = getEnvironments().VITE_API_URL
 
 
 export class AuthRepository implements IAuthRepository {

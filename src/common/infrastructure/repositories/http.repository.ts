@@ -1,6 +1,9 @@
 import Axios, {AxiosInstance} from "axios";
 import { IHttp } from "../../domain/repositories";
 import { IRequestOption } from "../../domain/repositories";
+import { getEnvironments } from "../../../helpers";
+
+const ALLOWED_HOSTS : string = getEnvironments().ALLOWED_HOSTS
 
 export class Http implements IHttp {
   axios: AxiosInstance;
@@ -15,7 +18,8 @@ export class Http implements IHttp {
       params: requestOption.params,
       data: requestOption.body,
       headers: {
-        ...requestOption.headers
+        ...requestOption.headers,
+        'Access-Control-Allow-Origins': ALLOWED_HOSTS.split(',')
       }
     })
 
