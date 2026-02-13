@@ -1,11 +1,7 @@
-import { Routes } from "react-router-dom";
+import { RouteObject } from "react-router-dom";
 
-const AppNameRoutes = () => {
-  return (
-    <Routes>
-      {/* Write your routes here */}
-    </Routes>
-  )
-}
+const AppNameRoutes: RouteObject[] = [
+  /* Define your routes here */
+];
 
-export { AppNameRoutes }
+export { AppNameRoutes };

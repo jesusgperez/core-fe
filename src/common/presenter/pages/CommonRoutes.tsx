@@ -1,13 +1,9 @@
-import { Routes, Route } from "react-router-dom";
+import { RouteObject } from "react-router-dom";
 import NotFound from "./NotFound";
 
 
-const CommonRoutes = () => {
-  return (
-    <Routes>
-      <Route path="*" element={<NotFound />}/>
-    </Routes>
-  )
-}
+const CommonRoutes: RouteObject[] = [
+  { path: "*", element: <NotFound /> },
+];
 
-export { CommonRoutes }
+export { CommonRoutes };
