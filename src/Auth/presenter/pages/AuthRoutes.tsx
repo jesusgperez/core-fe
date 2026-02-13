@@ -1,5 +1,4 @@
-import { Routes, Route } from "react-router-dom";
-import { Navigate } from "react-router-dom";
+import { Outlet, Navigate, RouteObject } from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";
 import RetrievePassword from "./RetrievePassword";
@@ -9,25 +8,24 @@ import ChangePassword from "./ChangePassword";
 import { AuthUrls as urls } from "./AuthUrls";
 
 
-const AuthRoutes = () => {
-  return (
-    <AuthProvider>
-      <Routes>
-          <Route path='/' element={<Navigate to='/login'/>}/>
-          <Route path={urls.login} element={<Login/>}/>
-          <Route path={urls.signup} element={<Signup/>}/>
-          <Route
-            path={urls.retrievePassword}
-            element={<RetrievePassword />}
-          />
-          <Route
-            path={urls.changePassword}
-            element={<ChangePassword />}
-          />
-          <Route path={urls.home} element={<Home />}/>
-      </Routes>
-    </AuthProvider>
-  )
-}
+const AuthLayout = () => (
+  <AuthProvider>
+    <Outlet />
+  </AuthProvider>
+);
 
-export { AuthRoutes }
+const AuthRoutes: RouteObject[] = [
+  {
+    element: <AuthLayout />,
+    children: [
+      { path: "/", element: <Navigate to="/login" /> },
+      { path: urls.login, element: <Login /> },
+      { path: urls.signup, element: <Signup /> },
+      { path: urls.retrievePassword, element: <RetrievePassword /> },
+      { path: urls.changePassword, element: <ChangePassword /> },
+      { path: urls.home, element: <Home /> },
+    ],
+  },
+];
+
+export { AuthRoutes };
