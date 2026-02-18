@@ -10,4 +10,5 @@ export const EmptyError: IError = {
 
 export type IServerError = {
   detail: string
+  statusCode?: number
 }

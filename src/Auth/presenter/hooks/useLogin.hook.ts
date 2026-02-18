@@ -40,7 +40,9 @@ const useLogin = () => {
       setModalState({
         open: true,
         title: "Error",
-        content: error.detail
+        content: error.statusCode === 500
+          ? "Estamos teniendo problemas, por favor intente más tarde"
+          : error.detail
       })
     }
   })
