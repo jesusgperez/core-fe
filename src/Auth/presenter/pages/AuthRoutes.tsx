@@ -5,6 +5,7 @@ import RetrievePassword from "./RetrievePassword";
 import Home from "./Home";
 import AuthProvider from "../contexts/Provider";
 import ChangePassword from "./ChangePassword";
+import SignupConfirm from "./SignupConfirm";
 import { AuthUrls as urls } from "./AuthUrls";
 
 
@@ -23,6 +24,7 @@ const AuthRoutes: RouteObject[] = [
       { path: urls.signup, element: <Signup /> },
       { path: urls.retrievePassword, element: <RetrievePassword /> },
       { path: urls.changePassword, element: <ChangePassword /> },
+      { path: urls.signupConfirm, element: <SignupConfirm /> },
       { path: urls.home, element: <Home /> },
     ],
   },

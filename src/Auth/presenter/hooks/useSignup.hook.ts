@@ -19,8 +19,8 @@ const useSignup = () => {
     mutationFn: (data) => injections.AuthUseCase.signupUser(data),
     onSuccess: (data) => {
       setModalState({
-        title: "¡Éxito!",
-        content: `Usuario ${data.firstName} ${data.lastName} has sido creado correctamente`,
+        title: "Completar Registro",
+        content: `Se ha enviado un correo a ${data.email} para terminar el proceso de registro`,
         open: true
       })
       navigate(AuthUrls.login)

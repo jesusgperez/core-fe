@@ -97,7 +97,7 @@ export class AuthRepository implements IAuthRepository {
   async changePassword(changeData: IChangeEntity, encryption: string): Promise<IChangeEntity> {
     try {
       const response = await this.http.request<IChangeDto>({
-        method: HttpMethod.put as Method,  
+        method: HttpMethod.put as Method,
         headers: {},
         params: {},
         body: ChangeAdapter.ChangeEntityToChangeDto(changeData),
@@ -105,6 +105,20 @@ export class AuthRepository implements IAuthRepository {
       })
 
       return ChangeAdapter.ChangeDtoToChangeEntity(response)
+    } catch (error: unknown) {
+      throw handleApiErrors(error)
+    }
+  }
+
+  async confirmSignup(encryption: string): Promise<void> {
+    try {
+      await this.http.request<null>({
+        method: HttpMethod.post as Method,
+        headers: {},
+        params: {},
+        body: {},
+        url: `${API_URL}tkauth/signup/confirm/${encryption}/`
+      })
     } catch (error: unknown) {
       throw handleApiErrors(error)
     }
