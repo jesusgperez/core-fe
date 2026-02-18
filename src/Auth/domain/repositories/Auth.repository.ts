@@ -11,4 +11,5 @@ export interface IAuthRepository {
   signupUser(signupData: ISignupEntity): Promise<ISignupEntity>;
   retrievePassword(retrieveData: IRetrieveEntity): Promise<void>;
   changePassword(changeData: IChangeEntity, encryption: string): Promise<IChangeEntity>;
+  confirmSignup(encryption: string): Promise<void>;
 }

@@ -22,4 +22,7 @@ export class AuthUseCase {
   changePassword = async (changeData: IChangeEntity, encryption: string): Promise<IChangeEntity> =>
     await this.Auth.changePassword(changeData, encryption)
 
+  confirmSignup = async (encryption: string): Promise<void> =>
+    await this.Auth.confirmSignup(encryption)
+
 }

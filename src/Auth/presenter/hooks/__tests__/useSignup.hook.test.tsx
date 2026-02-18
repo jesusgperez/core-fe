@@ -108,8 +108,8 @@ describe('useSignup', () => {
     })
 
     expect(mockSetModalState).toHaveBeenCalledWith({
-      title: '¡Éxito!',
-      content: 'Usuario John Doe has sido creado correctamente',
+      title: 'Completar Registro',
+      content: 'Se ha enviado un correo a john@example.com para terminar el proceso de registro',
       open: true
     })
   })
