@@ -27,7 +27,9 @@ const useSignupConfirm = () => {
 
       setModalState({
         title: "Error",
-        content: error.detail,
+        content: error.statusCode === 500
+          ? "Estamos teniendo problemas, por favor intente más tarde"
+          : error.detail,
         open: true
       })
     }

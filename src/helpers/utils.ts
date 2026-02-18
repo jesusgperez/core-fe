@@ -18,13 +18,14 @@ export const flatErrors = (errors: {[key: string]: string}): string => {
 
 export const handleApiErrors = (error: unknown): IServerError => {
   const err = error as AxiosError
+  const statusCode = err.response?.status
   const data = err.response!.data as {[key: string]: string}
-  let throwError: IServerError = {detail: ""}
-  
+  let throwError: IServerError = {detail: "", statusCode}
+
   if (!data.hasOwnProperty("detail")){
-    throwError = {detail: flatErrors(data)}
+    throwError = {detail: flatErrors(data), statusCode}
   } else {
-    throwError = data as IServerError
+    throwError = {...data as unknown as IServerError, statusCode}
   }
 
   return throwError
