@@ -95,7 +95,7 @@ describe('useRetrieve', () => {
 
     expect(mockSetModalState).toHaveBeenCalledWith({
       title: 'Éxito',
-      content: 'En caso de existir la cuenta, se ha enviado un correo para recuperar la contraseña, tienes 5 minutos de validez',
+      content: 'En caso de existir la cuenta, se ha enviado un correo para recuperar la contraseña',
       open: true
     })
   })
