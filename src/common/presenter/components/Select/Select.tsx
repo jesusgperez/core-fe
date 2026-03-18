@@ -37,6 +37,7 @@ const Select = ({
 
       setSelected([data])
       setSelectedOuter?.(new Set([data.tag]))
+      setOpen(false)
     } else {
       deleteSelectionMultiple(data)
     }
