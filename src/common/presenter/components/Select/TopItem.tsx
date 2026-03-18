@@ -13,7 +13,7 @@ const TopItem = ({open, selected, setOpen, errors, placeholder} : TopItemProps) 
     <div className="flex flex-col">
       <div
         onClick={() => setOpen(!open)}
-        className={`w-full p-2 flex items-center justify-between text-sm rounded-md bg-secondary ${!selected.length && 'text-gray-400 text-xs' || 'text-white text-sm'} ${open && 'rounded-none rounded-t-md' || ''}`}
+        className={`w-full p-2 flex items-center justify-between border border-muted text-sm rounded-md ${!selected.length && 'text-gray-400 text-xs' || 'text-sm'} ${open && 'rounded-none rounded-t-md' || ''}`}
       >
         {selected.length ? selected.map(obj => shortenName(obj.name)).join(', ') : placeholder}
 
@@ -22,7 +22,7 @@ const TopItem = ({open, selected, setOpen, errors, placeholder} : TopItemProps) 
           className={`${open && 'rotate-180' || 'rotate-360'} duration-200`}
           />
       </div>
-      <p className={`text-xs text-red-500 ${!hasError ? 'hidden' : 'block'}`}>
+      <p className={`text-xs text-danger ${!hasError ? 'hidden' : 'block'}`}>
         {errors ? errors.message : ""}
       </p>
     </div>

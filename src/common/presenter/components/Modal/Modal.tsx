@@ -30,7 +30,7 @@ const Modal = (
       onClick={onExit}
     >
       <div
-        className="flex flex-col w-3/4 px-5 py-10 bg-white border border-primary rounded-lg items-center justify-center shadow-xl space-y-2 lg:w-1/3"
+        className="flex flex-col w-3/4 px-5 py-10 bg-white border border-muted rounded-lg items-center justify-center shadow-xl space-y-2 lg:w-1/3"
         onClick={(e) => e.stopPropagation()}
       >
         <ModalTitle text={title} />

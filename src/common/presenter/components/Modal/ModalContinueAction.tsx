@@ -9,12 +9,12 @@ const ModalContinueAction = (
       <Button
         text="Salir"
         onClick={onExit}
-        customStyles="bg-red-500 w-full md:w-1/3"
+        customStyles="bg-danger w-full md:w-1/3"
       />
       <Button
         text="Continuar"
         onClick={onContinue}
-        customStyles="bg-green-400 w-full md:w-1/3"
+        customStyles="bg-success w-full md:w-1/3"
       />
     </div>
   )

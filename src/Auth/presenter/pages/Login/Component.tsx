@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { loginSchemeValidator } from "../../validators"
 import { AuthBackgroundLayout, AuthForm } from "../../layouts"
 import { AuthUrls } from "../AuthUrls"
+import logo from '../../../../assets/logo.svg'
 
 
 const Component = ({onLogin}: LoginProps) => {
@@ -28,7 +29,7 @@ const Component = ({onLogin}: LoginProps) => {
           <div
             className="absolute -top-12 rounded-full bg-blue-100 h-24 w-24 fill-blue-100 md:h-40 md:w-40 md:-top-20"
           >
-            <img src="src/assets/logo.svg" alt="" />
+            <img src={logo} alt="" />
           </div>
         </div>
         <div
@@ -74,7 +75,6 @@ const Component = ({onLogin}: LoginProps) => {
           <Button
             text="Ingresar"
             onClick={handleSubmit(onLogin)}
-            customStyles="bg-blue-400"
             enabled={isValid}
           />
         </div>
@@ -83,25 +83,19 @@ const Component = ({onLogin}: LoginProps) => {
           <div
             className="flex flex-col text-sm justify-center items-center w-full space-y-1 py-1"
           >
-            <p className="font-bold">¡Regístrate!</p>
-            <a
-              href={AuthUrls.signup}
-              className="text-blue-900 hover:underline"
-            >
-              Haz click aquí para registrarte
-            </a>
+            <Button
+              text="¡Regístrate!"
+              onClick={() => window.location.href = AuthUrls.signup}
+            />
           </div>
 
           <div
             className="flex flex-col text-sm justify-center items-center w-full space-y-1 py-1"
           >
-            <p className="font-bold">¿Olvidaste tu contraseña?</p>
-            <a
-              href={AuthUrls.retrievePassword}
-              className="text-blue-900 hover:underline"
-            >
-              Haz click aquí para recuperarla
-            </a>
+            <Button
+              text="¿Olvidaste tu contraseña?"
+              onClick={() => window.location.href = AuthUrls.retrievePassword}
+            />
           </div>
         </div>
       </AuthForm>

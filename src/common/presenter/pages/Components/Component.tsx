@@ -1,4 +1,5 @@
 import React from "react"
+import { colors } from "../../../../theme/colors"
 import { IAssetEntity } from "../../../domain/models"
 import { Button } from "../../components/Button"
 import { Input } from "../../components/Input"
@@ -57,6 +58,25 @@ const Component = ({
     <div className="min-h-screen bg-gray-50 relative">
       <div className="max-w-2xl mx-auto p-8 space-y-12">
         <h1 className="text-3xl font-bold text-gray-900">Component Catalog</h1>
+
+        {/* Colors */}
+        <section>
+          <SectionTitle title="Colors" />
+          <div className="grid grid-cols-2 gap-3">
+            {Object.entries(colors).map(([name, hex]) => (
+              <div key={name} className="flex items-center gap-3">
+                <div
+                  className="w-10 h-10 rounded border border-gray-200 shrink-0"
+                  style={{ backgroundColor: hex }}
+                />
+                <div>
+                  <p className="text-sm font-medium text-gray-800">{name}</p>
+                  <p className="text-xs text-gray-500">{hex}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
 
         {/* Button */}
         <section>

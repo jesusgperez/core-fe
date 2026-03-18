@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import { colors } from './src/theme/colors.js'
+
 export default {
   content: [
     "./index.html",
@@ -6,18 +8,12 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: "#110828",
-        secondary: "#370D68",
-        terciary: "#F1A23A",
-        cuaternary: '#ED762F',
-        selection: "#166bac"
-      },
+      colors,
       fontSize: {
         '2xs': '0.625rem'
       }
     },
-    backgroundImage: (theme) => ({
+    backgroundImage: () => ({
       'wave': "url(/src/assets/wave_background.svg)",
     })
   },

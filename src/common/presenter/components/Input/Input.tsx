@@ -14,7 +14,7 @@ const Input = ({
         onChange={(e) => setValue(e.target.value)}
         type={`${type || 'text'}`}
       />
-      <p className={`text-xs text-red-500 ${!hasError ? 'hidden' : 'block'}`}>
+      <p className={`text-xs text-danger ${!hasError ? 'hidden' : 'block'}`}>
         {errors ? errors.message : ""}
       </p>
     </div>

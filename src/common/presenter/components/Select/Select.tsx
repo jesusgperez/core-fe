@@ -55,7 +55,7 @@ const Select = ({
         placeholder={placeholder}
       />
 
-      <ul className={`absolute w-full bg-secondary text-white overflow-y-auto max-h-60 ${!open && 'hidden'} border border-black z-10`}>
+      <ul className={`absolute w-full bg-white text-black overflow-y-auto max-h-60 ${!open && 'hidden'} border border-black z-10`}>
         <ListSearch
           value={searchValue}
           setValue={setSearchValue}
@@ -72,7 +72,7 @@ const Select = ({
         )}
           {
             multiple && <button
-              className="w-full sticky bottom-0 text-primary bg-orange-200 hover:scale-105"
+              className="w-full sticky bottom-0 bg-cuaternary hover:scale-105"
               onClick={() => setOpen(!open)}
             >
               Cerrar

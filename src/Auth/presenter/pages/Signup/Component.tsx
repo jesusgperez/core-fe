@@ -5,6 +5,7 @@ import { ISignupEntity, DefaultSignupEntity } from "../../../domain/models"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { signupSchemeValidator } from "../../validators"
 import { AuthBackgroundLayout } from "../../layouts"
+import logo from '../../../../assets/logo.svg'
 
 
 const Component = ({ onSignup }: SignupProps) => {
@@ -144,7 +145,7 @@ const Component = ({ onSignup }: SignupProps) => {
         </form>
         <div className="flex justify-center items-center hidden w-1/2 h-full lg:block">
           <img
-            src="src/assets/logo.svg"
+            src={logo}
             alt=""
             className="hover:animate-spin duration-1000"
           />
