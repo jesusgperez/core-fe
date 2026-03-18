@@ -83,7 +83,7 @@ describe('Input', () => {
       />
     )
 
-    const errorElement = container.querySelector('p.text-red-500')
+    const errorElement = container.querySelector('p.text-danger')
     expect(errorElement).toHaveClass('hidden')
   })
 
